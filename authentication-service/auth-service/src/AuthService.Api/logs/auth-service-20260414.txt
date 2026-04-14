@@ -1,0 +1,66 @@
+[2026-04-14 15:45:34 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-14 15:45:35 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-14 15:45:35 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-14 15:45:35 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+[2026-04-14 15:45:35 ERR] An exception occurred while processing the key element '<key id="093d04ea-b93e-463c-9aa8-b4e5e81d554a" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+[2026-04-14 15:45:35 WRN] Key {093d04ea-b93e-463c-9aa8-b4e5e81d554a} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+[2026-04-14 15:45:35 WRN] Key {093d04ea-b93e-463c-9aa8-b4e5e81d554a} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+[2026-04-14 15:45:35 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-14 15:46:05 INF] HTTP GET / responded 404 in 20.8261 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDSTIEE3S:00000001","ConnectionId":"0HNKQDSTIEE3S"}
+[2026-04-14 15:46:07 INF] HTTP GET / responded 404 in 0.9636 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDSTIEE3U:00000001","ConnectionId":"0HNKQDSTIEE3U"}
+[2026-04-14 15:46:20 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-14 15:46:21 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-14 15:46:21 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-14 15:46:21 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-14 15:46:26 INF] HTTP GET / responded 404 in 14.7553 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDT3KOCG7:00000001","ConnectionId":"0HNKQDT3KOCG7"}
+[2026-04-14 15:46:29 INF] HTTP GET / responded 404 in 0.9759 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDT3KOCG7:00000002","ConnectionId":"0HNKQDT3KOCG7"}
+[2026-04-14 15:46:39 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 3.4366 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDT3KOCG9:00000001","ConnectionId":"0HNKQDT3KOCG9"}
+[2026-04-14 15:46:39 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"770131b5-525d-460b-b5ea-d4e7b94c7e2f","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKQDT3KOCG9:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKQDT3KOCG9"}
+[2026-04-14 15:46:39 INF] HTTP POST /api/v1/auth/login responded 200 in 718.3713 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQDT3KOCG9:00000002","ConnectionId":"0HNKQDT3KOCG9"}
+[2026-04-14 15:59:17 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-14 15:59:17 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-14 15:59:17 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-14 15:59:17 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-14 15:59:40 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 3.2177 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNG:00000001","ConnectionId":"0HNKQE4GASTNG"}
+[2026-04-14 15:59:40 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c29c433d-6c42-4598-82cc-5d3d5d8728b6","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKQE4GASTNG:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKQE4GASTNG"}
+[2026-04-14 15:59:41 INF] HTTP POST /api/v1/auth/login responded 200 in 643.0768 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNG:00000002","ConnectionId":"0HNKQE4GASTNG"}
+[2026-04-14 16:02:35 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.2773 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNH:00000001","ConnectionId":"0HNKQE4GASTNH"}
+[2026-04-14 16:02:35 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c29c433d-6c42-4598-82cc-5d3d5d8728b6","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKQE4GASTNH:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKQE4GASTNH"}
+[2026-04-14 16:02:35 INF] HTTP POST /api/v1/auth/login responded 200 in 319.0032 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNH:00000002","ConnectionId":"0HNKQE4GASTNH"}
+[2026-04-14 16:25:10 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.1392 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNI:00000001","ConnectionId":"0HNKQE4GASTNI"}
+[2026-04-14 16:25:10 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c29c433d-6c42-4598-82cc-5d3d5d8728b6","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKQE4GASTNI:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKQE4GASTNI"}
+[2026-04-14 16:25:10 INF] HTTP POST /api/v1/auth/login responded 200 in 301.8345 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKQE4GASTNI:00000002","ConnectionId":"0HNKQE4GASTNI"}
