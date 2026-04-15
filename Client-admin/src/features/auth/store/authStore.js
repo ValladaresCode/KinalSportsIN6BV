@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { login as loginRequest } from "../../../shared/api"
+import { use } from "react";
 
 export const useAuthStore = create(
     persist(
@@ -12,6 +13,16 @@ export const useAuthStore = create(
             error: null,
             isAuthenticated: false,
 
+            logout: ( ) => {
+                set:({
+                    user: null,
+                    token: null,
+                    expiresAt: null,
+                    isAuthenticated: false,
+                })
+            },
+
+
             login: async ({ emailOrUsername, password }) => {
                 try {
                     set({ loading: true, error: null });
@@ -20,7 +31,7 @@ export const useAuthStore = create(
 
                     set({
                         user: data.userDetails,
-                        token: data.token,
+                        token: data.accessToken,
                         expiresAt: data.expiresAt,
                         loading: false,
                     })

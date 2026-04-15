@@ -1,5 +1,6 @@
 import { Typography } from "@material-tailwind/react"
-import imgLogo from "../../assets/img/kinal_sports.png"
+import imgLogo from "../../../assets/img/kinal_sports.png"
+import { AvatarUser } from "../ui/AvatarUser"
 
 export const Navbar = () => {
   return (                              //Navbar fijo cuando se escrolea
@@ -11,6 +12,7 @@ export const Navbar = () => {
                     Kinal Sports Admin
                 </Typography>
             </div>
+            <AvatarUser />
         </div>
     </nav>
   )
