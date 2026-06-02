@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { useUserManagmentStore } from "../store/useUserManagmentStore.js"
+import { useUserManagementStore } from "../store/useUserManagmentStore.js"
 import { Spinner } from "../../auth/components/Spinner.jsx";
 import { showError, showSuccess } from "../../../shared/utils/toast.js";
  

@@ -1,7 +1,5 @@
 import { create } from "zustand";
-import * as authApi from "../../../shared/api/api.js"
-
-const getAllUsers = authApi.getAllUsers;
+import { getAllUsers } from "../../../shared/api"
 
 export const useUserManagementStore = create((set, get) => ({
     users: [],
